@@ -4,7 +4,7 @@ public class Date {
 	String day_, month_, year_;
 	boolean englishMode;
 	
-	Date (String day, String month, String year) {
+	public Date (String day, String month, String year) {
 		day_ = day;
 		month_ = month;
 		year_ = year;
@@ -12,7 +12,7 @@ public class Date {
 		englishMode = true;
 	}
 	
-	Date (String day, String month, String year, boolean isEnglish) {
+	public Date (String day, String month, String year, boolean isEnglish) {
 		day_ = day;
 		month_ = month;
 		year_ = year;

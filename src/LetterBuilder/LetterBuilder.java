@@ -13,6 +13,9 @@ abstract class LetterBuilder {
 	abstract protected String body();
 	abstract protected String conclusion();
 	protected String signature() {
-		return "\n\n\t\t __________________\n\t\t "+ sender_ + "\n\t\t " + sender_.getPhone() + "\n\t\t email:" + sender_.getEmail();
+		return "\n\n\t\t __________________\n\t\t " + 
+			   sender_ + "\n\t\t " + 
+			   sender_.getPhone() +
+			   "\n\t\t email:" + sender_.getEmail();
 	}
 }

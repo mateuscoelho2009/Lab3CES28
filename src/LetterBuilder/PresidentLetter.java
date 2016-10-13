@@ -2,10 +2,9 @@ package LetterBuilder;
 
 public class PresidentLetter extends LetterBuilder {
 
-	Person sender_, destinatary_;
-	Address addressSender_, addressDestiny_;
+	Person destinatary_;
+	Address addressDestiny_;
 	String assunto_;
-	Date date_;
 	
 	PresidentLetter (Person sender, Person destinatary,
 					 Address addressSender,  Address addressDestiny, 
