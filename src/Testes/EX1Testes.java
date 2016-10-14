@@ -60,7 +60,7 @@ public class EX1Testes {
 	
 	@Test
 	public void WhenCommercialLetterExpectRightLetter() {
-		ld = LetterDirector.commercialLetterDirector(sender, 
+		ld = LetterDirector.portugueseCommercialLetterDirector(sender, 
 													 destinatary,
 													 addressSender,
 													 addressDestiny,

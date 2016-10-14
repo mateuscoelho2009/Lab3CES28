@@ -78,4 +78,5 @@ public class CollegeDiscountLetter extends LetterBuilder {
 		return  addressSender_ + ", " + date_ + "." +
 				"\n\n\t\t __________________\n\t\t "+ sender_ + "\n\t\t " + sender_.getPhone() + "\n\t\t email:" + sender_.getEmail();
 	}
+	
 }

@@ -1,6 +1,6 @@
 package LetterBuilder;
 
-public class CommercialLetter extends LetterBuilder {
+abstract public class CommercialLetter extends LetterBuilder {
 	Person destinatary_;
 	Address addressDestiny_;
 
@@ -21,12 +21,15 @@ public class CommercialLetter extends LetterBuilder {
 
 	@Override
 	protected String body() {
-		return "Caro(a) " + destinatary_ + "\n";
+		return CaroNaLinguagem () + " " + destinatary_ + "\n";
 	}
+	
+	abstract protected String CaroNaLinguagem ();
 
 	@Override
 	protected String conclusion() {
-		return  "\nSinceramente,\n";
+		return  "\n" + SinceramenteNaLinguagem () + ",\n";
 	}
 
+	abstract protected String SinceramenteNaLinguagem ();
 }

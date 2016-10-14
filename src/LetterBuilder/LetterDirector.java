@@ -7,10 +7,26 @@ public class LetterDirector {
 		letterBuilder_ = lb;
 	}
 	
-	static public LetterDirector commercialLetterDirector (Person sender, String destinatary,
+	static public LetterDirector portugueseCommercialLetterDirector (Person sender, String destinatary,
 														   Address addressSender, Address addressDestiny,
 														   Date date) {
-		CommercialLetter cl = new CommercialLetter(sender, new Person(destinatary), addressSender, addressDestiny, date);
+		CommercialLetter cl = new PortugueseCommercialLetter(sender, new Person(destinatary), addressSender, addressDestiny, date);
+		
+		return new LetterDirector(cl);
+	}
+	
+	static public LetterDirector englishCommercialLetterDirector (Person sender, String destinatary,
+																		Address addressSender, Address addressDestiny,
+			   															Date date) {
+		CommercialLetter cl = new EnglishCommercialLetter(sender, new Person(destinatary), addressSender, addressDestiny, date);
+		
+		return new LetterDirector(cl);
+	}
+	
+	static public LetterDirector spanishCommercialLetterDirector (Person sender, String destinatary,
+																	Address addressSender, Address addressDestiny,
+																	Date date) {
+		CommercialLetter cl = new SpanishCommercialLetter(sender, new Person(destinatary), addressSender, addressDestiny, date);
 		
 		return new LetterDirector(cl);
 	}
