@@ -48,7 +48,7 @@ public class EX1Testes {
 	
 	@Test
 	public void WhenPresidentLetterExpectRightLetter() {		
-		ld = LetterDirector.presidentLetterDirector(sender,
+		ld = LetterDirector.portuguesePresidentLetterDirector(sender,
 													destinatary,
 													addressSender,
 													addressDestiny,
