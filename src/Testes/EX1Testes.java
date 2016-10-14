@@ -71,7 +71,7 @@ public class EX1Testes {
 	
 	@Test
 	public void WhenCollegeDiscountLetterExpectRightLetter() {
-		ld = LetterDirector.collegeDiscountLetterDirector(sender,
+		ld = LetterDirector.portugueseCollegeDiscountLetterDirector(sender,
 														  numMatricula,
 														  destinatary,
 														  departament,

@@ -58,11 +58,29 @@ public class LetterDirector {
 		return new LetterDirector(pl);
 	}
 	
-	static public LetterDirector collegeDiscountLetterDirector  (Person sender, String numMatricula, String destinatary, String departament,
+	static public LetterDirector portugueseCollegeDiscountLetterDirector  (Person sender, String numMatricula, String destinatary, String departament,
 														   		Address addressSender,  Address addressDestiny, 
 														   		String assunto,
 														   		Date date) {
-		CollegeDiscountLetter cdl = new CollegeDiscountLetter(sender, numMatricula, destinatary, departament, addressSender, addressDestiny, date);
+		CollegeDiscountLetter cdl = new PortugueseCollegeDiscountLetter(sender, numMatricula, destinatary, departament, addressSender, addressDestiny, date);
+		
+		return new LetterDirector(cdl);
+	}
+	
+	static public LetterDirector englishCollegeDiscountLetterDirector  (Person sender, String numMatricula, String destinatary, String departament,
+																   		Address addressSender,  Address addressDestiny, 
+																   		String assunto,
+																   		Date date) {
+		CollegeDiscountLetter cdl = new EnglishCollegeDiscountLetter(sender, numMatricula, destinatary, departament, addressSender, addressDestiny, date);
+		
+		return new LetterDirector(cdl);
+	}
+	
+	static public LetterDirector spanishCollegeDiscountLetterDirector  (Person sender, String numMatricula, String destinatary, String departament,
+																	   		Address addressSender,  Address addressDestiny, 
+																	   		String assunto,
+																	   		Date date) {
+		CollegeDiscountLetter cdl = new SpanishCollegeDiscountLetter(sender, numMatricula, destinatary, departament, addressSender, addressDestiny, date);
 		
 		return new LetterDirector(cdl);
 	}

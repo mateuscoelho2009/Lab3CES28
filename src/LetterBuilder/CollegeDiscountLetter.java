@@ -1,6 +1,6 @@
 package LetterBuilder;
 
-public class CollegeDiscountLetter extends LetterBuilder {
+public abstract class CollegeDiscountLetter extends LetterBuilder {
 	String destinatary_, departament_;
 	Address addressDestiny_;
 	String numMatricula_;
@@ -25,52 +25,56 @@ public class CollegeDiscountLetter extends LetterBuilder {
 
 	@Override
 	protected String body() {
+		return bodyFunction();
+	}
+        
+        protected String bodyFunction() {
 		String s = "";
 		
-		s += "Eu, " + sender_ + ", ";
+		s += EuLanguages() + ", " + sender_ + ", ";
 		
 		String aux = sender_.getNacionalidade();
 		if (!aux.equals(""))
 			s += aux + ", ";
 		else
-			s += "(nacionalidade), ";
+			s += "(" + nacionalidadeLanguages() + "), ";
 		
 		aux = sender_.getEstadoCivil();
 		if (!aux.equals(""))
 			s += aux + ", ";
 		else
-			s += "(Estado Civil), ";
+			s += "(" + estadoCivilLanguages()+ "), ";
 		
 		aux = sender_.getProfissao();
 		if (!aux.equals(""))
 			s += aux + ", ";
 		else
-			s += "(Profissão), ";
+			s += "(" +profissaoLanguages()+ "), ";
 		
-		s += "inscrito no CPF sob o nº ";
+		s += cpfLanguages();
 		
 		aux = sender_.getCPF();
 		if (!aux.equals(""))
 			s += aux + ", ";
 		else
-			s += "(informar), ";
+			s += "(" + informarLanguages() + "), ";
 		
-		s += "matriculado nesta instituição sobre o nº ";
+		s += nMatriculaLanguages();
 		
 		aux = numMatricula_;
 		if (!aux.equals(""))
 			s += aux + ", ";
 		else
-			s += "(informar), ";
+			s += "(" + informarLanguages() + "), ";
 		
-		s += "vem respeitosamente à presença de Vossa Senhoria, em razão do fato de se encontrar\n\n";
+		s += razaoLanguages() + "\n\n";
 		
 		return s;
 	}
 
 	@Override
 	protected String conclusion() {
-		return  "\nTermos em que,\n\nPede deferimento.";
+		return  "\n" +termosLanguages() + ",\n\n" +pedeLanguages() + ".";
 	}
 
 	@Override
@@ -78,5 +82,15 @@ public class CollegeDiscountLetter extends LetterBuilder {
 		return  addressSender_ + ", " + date_ + "." +
 				"\n\n\t\t __________________\n\t\t "+ sender_ + "\n\t\t " + sender_.getPhone() + "\n\t\t email:" + sender_.getEmail();
 	}
-	
+        
+        abstract protected String EuLanguages();
+        abstract protected String nacionalidadeLanguages();
+        abstract protected String estadoCivilLanguages();
+        abstract protected String profissaoLanguages();
+        abstract protected String cpfLanguages();
+        abstract protected String informarLanguages();
+        abstract protected String nMatriculaLanguages();
+        abstract protected String razaoLanguages();
+        abstract protected String termosLanguages();
+        abstract protected String pedeLanguages();
 }
