@@ -2,7 +2,7 @@ package LetterBuilder;
 
 public class Person {
 	private String name_;
-	private String phone_ = "";
+	private Phone phone_= null;
 	private String email_ = "";
 	
 	private String nacionalidade_;
@@ -10,7 +10,7 @@ public class Person {
 	private String profissao_;
 	private String cpf_;
 	
-	public Person (String name, String phone, String email, String nacionalidade,
+	public Person (String name, Phone phone, String email, String nacionalidade,
 					String estadoCivil, String profissao, String cpf) {
 		name_ = name;
 		phone_ = phone;
@@ -21,7 +21,7 @@ public class Person {
 		cpf_ = cpf;
 	}
 	
-	public Person (String name, String phone, String email) {
+	public Person (String name, Phone phone, String email) {
 		name_ = name;
 		phone_ = phone;
 		email_ = email;
@@ -36,7 +36,7 @@ public class Person {
 		return name_;
 	}
 
-	public String getPhone() {
+	public Phone getPhone() {
 		return phone_;
 	}
 

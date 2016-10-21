@@ -1,30 +1,13 @@
 package LetterBuilder;
 
-public class Date {
+public abstract class Date {
 	String day_, month_, year_;
-	boolean englishMode;
 	
 	public Date (String day, String month, String year) {
 		day_ = day;
 		month_ = month;
 		year_ = year;
-		
-		englishMode = true;
 	}
 	
-	public Date (String day, String month, String year, boolean isEnglish) {
-		day_ = day;
-		month_ = month;
-		year_ = year;
-		
-		englishMode = isEnglish;
-	}
-	
-	@Override
-	public String toString () {
-		if (englishMode)
-			return month_ + "/" + day_ + "/" + year_;
-		
-		return day_ + " de " + month_ + " de " + year_;
-	}
+	public abstract String toString ();
 }

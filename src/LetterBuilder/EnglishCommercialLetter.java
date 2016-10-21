@@ -19,5 +19,4 @@ public class EnglishCommercialLetter extends CommercialLetter {
 		// TODO Auto-generated method stub
 		return "Sincerely";
 	}
-
 }
